@@ -138,7 +138,7 @@ local vehhud = { loop = function()
 			local VehBodyHP = GetVehicleBodyHealth(MyPedVeh)
 			local VehBurnout = IsVehicleInBurnout(MyPedVeh)
 	--  #### 		   EDITED IN			  ####  --
-			local Gear = GetVehicleCurrentGear(MyPedVeh)								-- Check the current gear of the vehicle
+--			local Gear = GetVehicleCurrentGear(MyPedVeh)								-- Check the current gear of the vehicle
             local RPM = GetVehicleCurrentRpm(MyPedVeh)									-- Check the rpm of the vehicle
 			local model = GetVehicleClass(MyPedVeh)										-- Check the vehicle class/model
 			local driverseat = IsVehicleSeatFree(MyPedVeh)								-- Driver Seat
