@@ -1,5 +1,5 @@
-# CarHUD
+# VehHUD
 
-This is a script for fivem servers that give you various status of the car that you're drinving!
+This is a script for JM36 Lua Plugin that gives various info regarding the vehicle you're in!
 
 With the new updates you can also see status on helis and planes!
