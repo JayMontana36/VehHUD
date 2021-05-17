@@ -1,3 +1,7 @@
+-- Ported from FiveM to JM36 Lua Plugin by JayMontana36
+
+
+
 -- ################################### --
 --									   --
 --           I N F O        		   --
@@ -114,8 +118,9 @@ Fwv = function (entity)
 		    return { x = math.cos(hr) * 2.0, y = math.sin(hr) * 2.0 }
       end
 	  
-Citizen.CreateThread(function()
-	while true do Citizen.Wait(1)
+local vehhud = { loop = function()
+--Citizen.CreateThread(function()
+--	while true do Citizen.Wait(1)
 
 
 		local MyPed = GetPlayerPed(-1)
@@ -1143,8 +1148,9 @@ Citizen.CreateThread(function()
 			
 
 		end		
-	end
-end)
+	--end
+--end)
+end }
 
 function round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)
@@ -1168,3 +1174,5 @@ end
 function drawRct(x,y,width,height,r,g,b,a)
 	DrawRect(x + width/2, y + height/2, width, height, r, g, b, a)
 end
+
+return vehhud
