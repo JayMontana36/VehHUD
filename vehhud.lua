@@ -164,8 +164,8 @@ local vehhud = { loop = function()
 			local TyreBurst2 = IsVehicleTyreBurst(MyPedVeh, 1, false)							-- Front Right Tyre
 			local TyreBurst3 = IsVehicleTyreBurst(MyPedVeh, 4, false)							-- Back Left Tyre
 			local TyreBurst4 = IsVehicleTyreBurst(MyPedVeh, 5, false)							-- Back Right Tyre
-			local Bumper1 = IsVehicleBumperBrokenOff(MyPedVeh, 0)						-- Back Broken Bumper
-			local Bumper2 = IsVehicleBumperBrokenOff(MyPedVeh, 1)						-- Front Broken Bumper
+			local Bumper1 = IsVehicleBumperBrokenOff(MyPedVeh, false)						-- Back Broken Bumper
+			local Bumper2 = IsVehicleBumperBrokenOff(MyPedVeh, true)						-- Front Broken Bumper
 			local Height = GetEntityHeightAboveGround(MyPedVeh)							-- Check the height above the ground
 			local Roll = GetEntityRoll(MyPedVeh)										-- Check the roll of the plane
 			local Pitch = GetEntityPitch(MyPedVeh)										-- Check the pitch of the plane
