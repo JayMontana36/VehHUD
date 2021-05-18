@@ -143,8 +143,8 @@ local vehhud = { loop = function()
 			local model = GetVehicleClass(MyPedVeh)										-- Check the vehicle class/model
 --			local driverseat = IsVehicleSeatFree(MyPedVeh)								-- Driver Seat
 --			local Indicator = GetVehicleIndicatorLights(MyPedVeh)						-- Check the state of the indicators
-			local _,llightson,lhighbeams = GetVehicleLightsState(MyPedVeh, 0)			-- Left Beams
-			local _,rlightson,rhighbeams = GetVehicleLightsState(MyPedVeh, 1)			-- Right Beams
+			local _,llightson,lhighbeams = GetVehicleLightsState(MyPedVeh, 0, 0)			-- Left Beams
+			local _,rlightson,rhighbeams = GetVehicleLightsState(MyPedVeh, 1, 1)			-- Right Beams
 --			local Passenger1 = GetVehicleNumberOfPassengers(MyPedVeh, 0)				-- Seat Right Front
 --			local Passenger2 = GetVehicleNumberOfPassengers(MyPedVeh, 1)				-- Seat Left Back
 --			local Passenger3 = GetVehicleNumberOfPassengers(MyPedVeh, 2)				-- Seat Right Back
