@@ -139,7 +139,7 @@ local vehhud = { loop = function()
 			local VehBurnout = IsVehicleInBurnout(MyPedVeh)
 	--  #### 		   EDITED IN			  ####  --
 --			local Gear = GetVehicleCurrentGear(MyPedVeh)								-- Check the current gear of the vehicle
-            local RPM = GetVehicleCurrentRpm(MyPedVeh)									-- Check the rpm of the vehicle
+--			local RPM = GetVehicleCurrentRpm(MyPedVeh)									-- Check the rpm of the vehicle
 			local model = GetVehicleClass(MyPedVeh)										-- Check the vehicle class/model
 			local driverseat = IsVehicleSeatFree(MyPedVeh)								-- Driver Seat
 			local Indicator = GetVehicleIndicatorLights(MyPedVeh)						-- Check the state of the indicators
@@ -180,11 +180,11 @@ local vehhud = { loop = function()
 			local LandingGear0 = Citizen.InvokeNative(0x9B0F3DCA3DB0F4CD,MyPedVeh, 0)	-- Check the state of the landing gear
 			--local MiniMap = Citizen.InvokeNative(0xAF754F20EB5CD51A ,MyPed)			-- Something for the future ;)
 	--  #### SOME STUFF THAT YOU CAN'T CHANGE ####  --
-			if RPM > 0.99 then
-				RPM = RPM*100
-				RPM = RPM+math.random(-2,2)
-				RPM = RPM/100
-			end
+--			if RPM > 0.99 then
+--				RPM = RPM*100
+--				RPM = RPM+math.random(-2,2)
+--				RPM = RPM/100
+--			end
 			if carspeed == nil and cruisecolor == true then
 				carspeed = Speed
 			end
@@ -1011,11 +1011,11 @@ local vehhud = { loop = function()
 				end
 			end
 
-			if HUD.CarRPM and (model ~= 13) and PedHeli == false and PedPlane == false and PedBoat == false then
-					drawRct(UI.x + 0.11, 	UI.y + 0.903, 0.046,0.03,0,0,0,150)
-					drawTxt(UI.x + 0.61, 	UI.y + 1.39, 1.0,1.0,0.64 , "~w~" ..  math.ceil(round(RPM, 2)*10000), 255, 255, 255, 255)
-					drawTxt(UI.x + 0.636, 	UI.y + 1.402, 1.0,1.0,0.4, "~w~ RPM", 255, 255, 255, 255)
-			end
+--			if HUD.CarRPM and (model ~= 13) and PedHeli == false and PedPlane == false and PedBoat == false then
+--					drawRct(UI.x + 0.11, 	UI.y + 0.903, 0.046,0.03,0,0,0,150)
+--					drawTxt(UI.x + 0.61, 	UI.y + 1.39, 1.0,1.0,0.64 , "~w~" ..  math.ceil(round(RPM, 2)*10000), 255, 255, 255, 255)
+--					drawTxt(UI.x + 0.636, 	UI.y + 1.402, 1.0,1.0,0.4, "~w~ RPM", 255, 255, 255, 255)
+--			end
 			
 			if HUD.CarGears and PedHeli == false and PedPlane == false and PedBoat == false then
 				if VehStopped and (Speed == 0) then
@@ -1122,7 +1122,7 @@ local vehhud = { loop = function()
 					drawTxt(UI.x + 0.619, UI.y + 1.245, 1.0,1.0,0.45, "ENG", 0, 255, 0,200) -- ENG green
 				else
 					drawTxt(UI.x + 0.619, UI.y + 1.245, 1.0,1.0,0.45, "ENG", 255, 0, 0, 200) -- ENG red
-					RPM = 0
+--					RPM = 0
 				end
 			end
 			
