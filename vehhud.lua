@@ -970,7 +970,7 @@ local vehhud = { loop = function()
 
 			if HUD.SeatBelt and PedBike == false and PedHeli == false and PedPlane == false and PedBoat == false then
 					drawTxt(UI.x + 0.541, UI.y + 1.245, 1.0,1.0,0.45, "|", 255, 255, 255,200)
-				local car = GetVehiclePedIsIn(MyPed)
+				local car = GetVehiclePedIsIn(MyPed, false)
 		
 				if car ~= 0 and (wasInCar or IsCar(car)) then
 		
