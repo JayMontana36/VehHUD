@@ -142,7 +142,7 @@ local vehhud = { loop = function()
 --			local RPM = GetVehicleCurrentRpm(MyPedVeh)									-- Check the rpm of the vehicle
 			local model = GetVehicleClass(MyPedVeh)										-- Check the vehicle class/model
 --			local driverseat = IsVehicleSeatFree(MyPedVeh)								-- Driver Seat
-			local Indicator = GetVehicleIndicatorLights(MyPedVeh)						-- Check the state of the indicators
+--			local Indicator = GetVehicleIndicatorLights(MyPedVeh)						-- Check the state of the indicators
 			local _,llightson,lhighbeams = GetVehicleLightsState(MyPedVeh, 0)			-- Left Beams
 			local _,rlightson,rhighbeams = GetVehicleLightsState(MyPedVeh, 1)			-- Right Beams
 --			local Passenger1 = GetVehicleNumberOfPassengers(MyPedVeh, 0)				-- Seat Right Front
@@ -947,26 +947,26 @@ local vehhud = { loop = function()
 				end
 			end
 	--  ####         	 PLANE HUD	  	  	  ####  --			
-			if HUD.Indicators and PedHeli == false and PedPlane == false and PedBoat == false then
-				drawTxt(UI.x + 0.5795, UI.y + 1.245, 1.0,1.0,0.45, "|", 255, 255, 255,200)
-				if Indicator == 1 then -- Rigth Indicator
-					drawRct(UI.x + 0.086, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
-					drawRct(UI.x + 0.087, 	UI.y + 0.761, 0.002,0.008, 0, 255, 0, 200)
-					drawRct(UI.x + 0.088, 	UI.y + 0.760, 0.002,0.011, 0, 255, 0, 200)
-				elseif Indicator == 2 then -- Left Indicator
-					drawRct(UI.x + 0.104, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
-					drawRct(UI.x + 0.104, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
-					drawRct(UI.x + 0.114, 	UI.y + 0.761, 0.002,0.008, 0, 255, 0, 200)
-					drawRct(UI.x + 0.113, 	UI.y + 0.760, 0.002,0.011, 0, 255, 0, 200)
-				elseif Indicator == 3 then -- Both Indicators
-					drawRct(UI.x + 0.086, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
-					drawRct(UI.x + 0.087, 	UI.y + 0.761, 0.002,0.008, 0, 255, 0, 200)
-					drawRct(UI.x + 0.088, 	UI.y + 0.760, 0.002,0.011, 0, 255, 0, 200)
-					drawRct(UI.x + 0.104, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
-					drawRct(UI.x + 0.114, 	UI.y + 0.761, 0.002,0.008, 0, 255, 0, 200)
-					drawRct(UI.x + 0.113, 	UI.y + 0.760, 0.002,0.011, 0, 255, 0, 200)
-				end
-			end
+--			if HUD.Indicators and PedHeli == false and PedPlane == false and PedBoat == false then
+--				drawTxt(UI.x + 0.5795, UI.y + 1.245, 1.0,1.0,0.45, "|", 255, 255, 255,200)
+--				if Indicator == 1 then -- Rigth Indicator
+--					drawRct(UI.x + 0.086, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.087, 	UI.y + 0.761, 0.002,0.008, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.088, 	UI.y + 0.760, 0.002,0.011, 0, 255, 0, 200)
+--				elseif Indicator == 2 then -- Left Indicator
+--					drawRct(UI.x + 0.104, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.104, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.114, 	UI.y + 0.761, 0.002,0.008, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.113, 	UI.y + 0.760, 0.002,0.011, 0, 255, 0, 200)
+--				elseif Indicator == 3 then -- Both Indicators
+--					drawRct(UI.x + 0.086, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.087, 	UI.y + 0.761, 0.002,0.008, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.088, 	UI.y + 0.760, 0.002,0.011, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.104, 	UI.y + 0.764, 0.013,0.003, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.114, 	UI.y + 0.761, 0.002,0.008, 0, 255, 0, 200)
+--					drawRct(UI.x + 0.113, 	UI.y + 0.760, 0.002,0.011, 0, 255, 0, 200)
+--				end
+--			end
 
 			if HUD.SeatBelt and PedBike == false and PedHeli == false and PedPlane == false and PedBoat == false then
 					drawTxt(UI.x + 0.541, UI.y + 1.245, 1.0,1.0,0.45, "|", 255, 255, 255,200)
