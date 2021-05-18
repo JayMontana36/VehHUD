@@ -160,10 +160,10 @@ local vehhud = { loop = function()
 			local WindowDamage4 = IsVehicleWindowIntact(MyPedVeh, 3)					-- Back Right Window
 			local WindowDamage5 = IsVehicleWindowIntact(MyPedVeh, 6)					-- Windshield
 			local WindowDamage6 = IsVehicleWindowIntact(MyPedVeh, 7)					-- Back Window
-			local TyreBurst1 = IsVehicleTyreBurst(MyPedVeh, 0)							-- Front Left Tyre
-			local TyreBurst2 = IsVehicleTyreBurst(MyPedVeh, 1)							-- Front Right Tyre
-			local TyreBurst3 = IsVehicleTyreBurst(MyPedVeh, 4)							-- Back Left Tyre
-			local TyreBurst4 = IsVehicleTyreBurst(MyPedVeh, 5)							-- Back Right Tyre
+			local TyreBurst1 = IsVehicleTyreBurst(MyPedVeh, 0, false)							-- Front Left Tyre
+			local TyreBurst2 = IsVehicleTyreBurst(MyPedVeh, 1, false)							-- Front Right Tyre
+			local TyreBurst3 = IsVehicleTyreBurst(MyPedVeh, 4, false)							-- Back Left Tyre
+			local TyreBurst4 = IsVehicleTyreBurst(MyPedVeh, 5, false)							-- Back Right Tyre
 			local Bumper1 = IsVehicleBumperBrokenOff(MyPedVeh, 0)						-- Back Broken Bumper
 			local Bumper2 = IsVehicleBumperBrokenOff(MyPedVeh, 1)						-- Front Broken Bumper
 			local Height = GetEntityHeightAboveGround(MyPedVeh)							-- Check the height above the ground
