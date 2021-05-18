@@ -171,13 +171,13 @@ local vehhud = { loop = function()
 			local Pitch = GetEntityPitch(MyPedVeh)										-- Check the pitch of the plane
 			local MainRotor = GetHeliMainRotorHealth(MyPedVeh)							-- Check the Main Rotor of the heli
 			local TailRotor = GetHeliTailRotorHealth(MyPedVeh)							-- Check the Tail Rotor of the heli
-			local Hangingbumper1 = Citizen.InvokeNative(0x27B926779DEB502D,MyPedVeh, 0) -- Back Hanging Bumper
-			local Hangingbumper2 = Citizen.InvokeNative(0x27B926779DEB502D,MyPedVeh, 1) -- Front Hanging Bumper
-			local LHeadlight = Citizen.InvokeNative(0x5EF77C9ADD3B11A3,MyPedVeh)		-- Left HeadLight
-			local RHeadlight = Citizen.InvokeNative(0xA7ECB73355EB2F20,MyPedVeh)		-- Right HeadLight
-			local EngineRunning = Citizen.InvokeNative(0xAE31E7DF9B5B132E,MyPedVeh)     -- Check if the engine is running
-			local get_collision_veh = Citizen.InvokeNative(0x8BAD02F0368D9E14,MyPedVeh) -- Check if the vehicle hit something
-			local LandingGear0 = Citizen.InvokeNative(0x9B0F3DCA3DB0F4CD,MyPedVeh, 0)	-- Check the state of the landing gear
+			local Hangingbumper1 = IsVehicleBumperBouncing(MyPedVeh, false) -- Back Hanging Bumper
+			local Hangingbumper2 = IsVehicleBumperBouncing(MyPedVeh, true) -- Front Hanging Bumper
+			local LHeadlight = GetIsLeftVehicleHeadlightDamaged(MyPedVeh)		-- Left HeadLight
+			local RHeadlight = GetIsRightVehicleHeadlightDamaged(MyPedVeh)		-- Right HeadLight
+			local EngineRunning = GetIsVehicleEngineRunning(MyPedVeh)     -- Check if the engine is running
+			local get_collision_veh = HasEntityCollidedWithAnything(MyPedVeh) -- Check if the vehicle hit something
+			local LandingGear0 = GetLandingGearState(MyPedVeh)	-- Check the state of the landing gear
 			--local MiniMap = Citizen.InvokeNative(0xAF754F20EB5CD51A ,MyPed)			-- Something for the future ;)
 	--  #### SOME STUFF THAT YOU CAN'T CHANGE ####  --
 --			if RPM > 0.99 then
