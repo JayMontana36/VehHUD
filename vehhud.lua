@@ -141,13 +141,13 @@ local vehhud = { loop = function()
 --			local Gear = GetVehicleCurrentGear(MyPedVeh)								-- Check the current gear of the vehicle
 --			local RPM = GetVehicleCurrentRpm(MyPedVeh)									-- Check the rpm of the vehicle
 			local model = GetVehicleClass(MyPedVeh)										-- Check the vehicle class/model
-			local driverseat = IsVehicleSeatFree(MyPedVeh)								-- Driver Seat
+--			local driverseat = IsVehicleSeatFree(MyPedVeh)								-- Driver Seat
 			local Indicator = GetVehicleIndicatorLights(MyPedVeh)						-- Check the state of the indicators
 			local _,llightson,lhighbeams = GetVehicleLightsState(MyPedVeh, 0)			-- Left Beams
 			local _,rlightson,rhighbeams = GetVehicleLightsState(MyPedVeh, 1)			-- Right Beams
-			local Passenger1 = GetVehicleNumberOfPassengers(MyPedVeh, 0)				-- Seat Right Front
-			local Passenger2 = GetVehicleNumberOfPassengers(MyPedVeh, 1)				-- Seat Left Back
-			local Passenger3 = GetVehicleNumberOfPassengers(MyPedVeh, 2)				-- Seat Right Back
+--			local Passenger1 = GetVehicleNumberOfPassengers(MyPedVeh, 0)				-- Seat Right Front
+--			local Passenger2 = GetVehicleNumberOfPassengers(MyPedVeh, 1)				-- Seat Left Back
+--			local Passenger3 = GetVehicleNumberOfPassengers(MyPedVeh, 2)				-- Seat Right Back
 			local DoorDamagef1 = IsVehicleDoorDamaged(MyPedVeh, 0)						-- Front Left Door
 			local DoorDamagef2 = IsVehicleDoorDamaged(MyPedVeh, 1)						-- Front Right Door
 			local DoorDamagef3 = IsVehicleDoorDamaged(MyPedVeh, 2)						-- Back Left Door
@@ -353,15 +353,15 @@ local vehhud = { loop = function()
 				else
 					drawRct(RM.x + 0.254, 	RM.y + 0.869, 0.006,0.030, 255, 255, 0, 100)
 				end
-				if driverseat then
-					drawRct(RM.x + 0.199, 	RM.y + 0.843, 0.011,0.020, 0, 255, 0, 050)
-				elseif Passenger1 then
-					drawRct(RM.x + 0.237, 	RM.y + 0.843, 0.011,0.020, 0, 255, 0, 050)
-				elseif Passenger2 then
-					drawRct(RM.x + 0.199, 	RM.y + 0.875, 0.011,0.020, 0, 255, 0, 050)
-				elseif Passenger3 then
-					drawRct(RM.x + 0.237, 	RM.y + 0.875, 0.011,0.020, 0, 255, 0, 050)
-				end
+--				if driverseat then
+--					drawRct(RM.x + 0.199, 	RM.y + 0.843, 0.011,0.020, 0, 255, 0, 050)
+--				elseif Passenger1 then
+--					drawRct(RM.x + 0.237, 	RM.y + 0.843, 0.011,0.020, 0, 255, 0, 050)
+--				elseif Passenger2 then
+--					drawRct(RM.x + 0.199, 	RM.y + 0.875, 0.011,0.020, 0, 255, 0, 050)
+--				elseif Passenger3 then
+--					drawRct(RM.x + 0.237, 	RM.y + 0.875, 0.011,0.020, 0, 255, 0, 050)
+--				end
 	--  ####          BACK DAMAGE	  		  ####  --
 				if Bumper1 then
 					drawRct(RM.x + 0.196, 	RM.y + 0.962, 0.053,0.01, 255, 0, 0, 100)
