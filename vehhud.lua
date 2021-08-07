@@ -1,4 +1,5 @@
 -- Ported from FiveM to JM36 Lua Plugin by JayMontana36
+if not JM36_GTAV_LuaPlugin_Version or JM36_GTAV_LuaPlugin_Version < 5.1 then error("You are attempting to use an incompatible or an outdated version of Lua Plugin; please update to the latest version of JM36 GTAV Lua Plugin first - https://github.com/JayMontana36/LuaPlugin-GTAV/releases") return end if not JM36_GTAV_LuaPlugin_FunctionRemapper_Version or JM36_GTAV_LuaPlugin_FunctionRemapper_Version < 20210518 then error("You are attempting to use an incompatible or an outdated version of JM36 Lua Plugin Function (Re)Mapper; please update to the latest version of JM36 Lua Plugin Function (Re)Mapper first - https://github.com/JayMontana36/GTAV_LP_JM36-FunctionRemapper/releases") return end
 
 
 
