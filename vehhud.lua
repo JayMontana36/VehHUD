@@ -979,7 +979,7 @@ local vehhud = { loop = function()
 					wasInCar = true
 			
 					if beltOn then 
-						DisableControlAction(0, 75) -- You can't leave the car if you have the seatbelt on
+						DisableControlAction(0, 75, true) -- You can't leave the car if you have the seatbelt on
 					end
 			
 					speedBuffer[2] = speedBuffer[1]
