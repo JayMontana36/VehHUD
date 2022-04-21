@@ -986,7 +986,7 @@ local vehhud = { loop = function()
 					speedBuffer[1] = GetEntitySpeed(car)
 			
 						if speedBuffer[2] ~= nil and not beltOn and GetEntitySpeedVector(car, true).y > 1.0 and speedBuffer[1] > 19.2 and (speedBuffer[2] - speedBuffer[1]) > (speedBuffer[1] * 0.255) then
-							local co = GetEntityCoords(MyPed)
+							local co = GetEntityCoords(MyPed, false)
 							local fw = Fwv(MyPed)
 							SetEntityCoords(MyPed, co.x + fw.x, co.y + fw.y, co.z - 0.47, true, true, true)
 							SetEntityVelocity(MyPed, velBuffer[2].x, velBuffer[2].y, velBuffer[2].z)
