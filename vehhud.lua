@@ -107,24 +107,46 @@ local wasInCar    	  = false
 --									   --
 -- ################################### --
 
-IsCar = function(veh)
+local IsCar = function(veh)
 		    local vc = GetVehicleClass(veh)
 		    return (vc >= 0 and vc <= 7) or (vc >= 9 and vc <= 12) or (vc >= 17 and vc <= 20)
         end	
 
-Fwv = function (entity)
+local Fwv = function (entity)
 		    local hr = GetEntityHeading(entity) + 90.0
 		    if hr < 0.0 then hr = 360.0 + hr end
 		    hr = hr * 0.0174533
 		    return { x = math.cos(hr) * 2.0, y = math.sin(hr) * 2.0 }
       end
+
+local function round(num, numDecimalPlaces)
+  local mult = 10^(numDecimalPlaces or 0)
+  return math.floor(num * mult + 0.5) / mult
+end
+
+local function drawTxt(x,y ,width,height,scale, text, r,g,b,a)
+    SetTextFont(4)
+    SetTextProportional(0)
+    SetTextScale(scale, scale)
+    SetTextColour(r, g, b, a)
+    SetTextDropshadow(0, 0, 0, 0,255)
+    SetTextEdge(2, 0, 0, 0, 255)
+    SetTextDropShadow()
+    SetTextOutline()
+    SetTextEntry("STRING")
+    AddTextComponentString(text)
+    DrawText(x - width/2, y - height/2 + 0.005)
+end
+
+local function drawRct(x,y,width,height,r,g,b,a)
+	DrawRect(x + width/2, y + height/2, width, height, r, g, b, a)
+end
 	  
-local vehhud = { loop = function()
---Citizen.CreateThread(function()
---	while true do Citizen.Wait(1)
+JM36.CreateThread(function()
+	while true do JM36.Wait(1)
 
 
-		local MyPed = GetPlayerPed(-1)
+		local MyPed = Info.Player.Ped
 		local PedHeli = IsPedInAnyHeli(MyPed)											-- Checks if the PED is in any Heli
 		local PedPlane = IsPedInAnyPlane(MyPed)											-- Checks if the PEd is in any Plane
 		local PedBoat = IsPedInAnyBoat(MyPed)											-- Checks if the PED is in any Boat
@@ -132,7 +154,7 @@ local vehhud = { loop = function()
 		
 		if(IsPedInAnyVehicle(MyPed, false)) then
 			
-			local MyPedVeh = GetVehiclePedIsIn(GetPlayerPed(-1),false)
+			local MyPedVeh = Info.Player.Vehicle.Id
 			local PlateVeh = GetVehicleNumberPlateText(MyPedVeh)
 			local VehStopped = IsVehicleStopped(MyPedVeh)
 			local VehEngineHP = GetVehicleEngineHealth(MyPedVeh) 
@@ -1150,31 +1172,5 @@ local vehhud = { loop = function()
 			
 
 		end		
-	--end
---end)
-end }
-
-function round(num, numDecimalPlaces)
-  local mult = 10^(numDecimalPlaces or 0)
-  return math.floor(num * mult + 0.5) / mult
-end
-
-function drawTxt(x,y ,width,height,scale, text, r,g,b,a)
-    SetTextFont(4)
-    SetTextProportional(0)
-    SetTextScale(scale, scale)
-    SetTextColour(r, g, b, a)
-    SetTextDropshadow(0, 0, 0, 0,255)
-    SetTextEdge(2, 0, 0, 0, 255)
-    SetTextDropShadow()
-    SetTextOutline()
-    SetTextEntry("STRING")
-    AddTextComponentString(text)
-    DrawText(x - width/2, y - height/2 + 0.005)
-end
-
-function drawRct(x,y,width,height,r,g,b,a)
-	DrawRect(x + width/2, y + height/2, width, height, r, g, b, a)
-end
-
-return vehhud
+	end
+end)
