@@ -1,5 +1,6 @@
 -- Ported from FiveM to JM36 Lua Plugin by JayMontana36
-if not JM36_GTAV_LuaPlugin_Version or JM36_GTAV_LuaPlugin_Version < 5.1 then error("You are attempting to use an incompatible or an outdated version of Lua Plugin; please update to the latest version of JM36 GTAV Lua Plugin first - https://github.com/JayMontana36/LuaPlugin-GTAV/releases") return end if not JM36_GTAV_LuaPlugin_FunctionRemapper_Version or JM36_GTAV_LuaPlugin_FunctionRemapper_Version < 20210518 then error("You are attempting to use an incompatible or an outdated version of JM36 Lua Plugin Function (Re)Mapper; please update to the latest version of JM36 Lua Plugin Function (Re)Mapper first - https://github.com/JayMontana36/GTAV_LP_JM36-FunctionRemapper/releases") return end
+assert(JM36_GTAV_LuaPlugin_Version and JM36_GTAV_LuaPlugin_Version >= 20230724.0, "You are attempting to use an incompatible or an outdated version of Lua Plugin; please update to the latest version of JM36 GTAV Lua Plugin first - https://github.com/JayMontana36/LuaPlugin-GTAV/releases")
+local Speed = 0.0
 
 
 
@@ -30,7 +31,7 @@ if not JM36_GTAV_LuaPlugin_Version or JM36_GTAV_LuaPlugin_Version < 5.1 then err
 -- show/hide compoent
 local HUD = {
 	
-	Speed 			= 'kmh', 	-- kmh or mph
+	Speed 			= 'mph', 	-- kmh or mph
 
 	DamageSystem 	= false, 
 
@@ -162,7 +163,7 @@ JM36.CreateThread(function()
 			local VehBurnout = IsVehicleInBurnout(MyPedVeh)
 	--  #### 		   EDITED IN			  ####  --
 --			local Gear = GetVehicleCurrentGear(MyPedVeh)								-- Check the current gear of the vehicle
-			local Gear = 1								-- Check the current gear of the vehicle
+			local Gear = (VehStopped or (GetEntitySpeedVector(MyPedVeh, true).y < 0)) and 0 or 1
 --			local RPM = GetVehicleCurrentRpm(MyPedVeh)									-- Check the rpm of the vehicle
 			local model = GetVehicleClass(MyPedVeh)										-- Check the vehicle class/model
 --			local driverseat = IsVehicleSeatFree(MyPedVeh)								-- Driver Seat
@@ -1045,9 +1046,10 @@ JM36.CreateThread(function()
 				if VehStopped and (Speed == 0) then
 					drawTxt(UI.x + 0.648, UI.y + 1.245, 1.0,1.0,0.45, "P", 255, 0, 0, 200)
 				elseif Gear < 1 then
-					drawTxt(UI.x + 0.648, UI.y + 1.245, 1.0,1.0,0.45, "R", 255, 255, 255, 200)						
+					drawTxt(UI.x + 0.648, UI.y + 1.245, 1.0,1.0,0.45, "R", 255, 255, 255, 200)
 				elseif Gear == 1 then
-					drawTxt(UI.x + 0.648, UI.y + 1.245, 1.0,1.0,0.45, "1", 255, 255, 255, 200)
+					--drawTxt(UI.x + 0.648, UI.y + 1.245, 1.0,1.0,0.45, "1", 255, 255, 255, 200)
+					drawTxt(UI.x + 0.648, UI.y + 1.245, 1.0,1.0,0.45, "D", 255, 255, 255, 200)
 				elseif Gear == 2 then
 					drawTxt(UI.x + 0.648, UI.y + 1.245, 1.0,1.0,0.45, "2", 255, 255, 255, 200)
 				elseif Gear == 3 then
